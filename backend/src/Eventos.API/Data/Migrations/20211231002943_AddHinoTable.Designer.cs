@@ -2,14 +2,16 @@
 using Eventos.API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Eventos.API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20211231002943_AddHinoTable")]
+    partial class AddHinoTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -55,9 +57,6 @@ namespace Eventos.API.Data.Migrations
 
                     b.Property<string>("Letra")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("Numero")
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");

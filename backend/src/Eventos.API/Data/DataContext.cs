@@ -7,5 +7,6 @@ namespace Eventos.API.Data
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
         public DbSet<Evento> Eventos { get; set; }
+        public DbSet<Hino> Hinos { get; set; }
     }
 }

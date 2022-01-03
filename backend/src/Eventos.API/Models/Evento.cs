@@ -1,6 +1,6 @@
 namespace Eventos.API.Models
 {
-        public class Evento
+    public class Evento
     {
         public int Id { get; set; }
         public string Local { get; set; }

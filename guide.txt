@@ -1,0 +1,4 @@
+Migrations
+Adicionar  - dotnet ef migrations add Initial -o Data/Migrations
+Remover    - dotnet ef migrations remove
+Remover    - dotnet ef database update

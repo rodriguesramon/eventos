@@ -1,38 +1,38 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using Eventos.API.Data;
 using Eventos.API.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Eventos.API.Controllers
+namespace Hinos.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class EventoController : ControllerBase
+    public class HinosController : ControllerBase
     {
-        public IEnumerable<Evento> _evento = new Evento[] {
-            new Evento() {
+        public IEnumerable<Hino> _Hino = new Hino[] {
+            new Hino() {
                 Id = 1
             }
         };
         private readonly DataContext _context;
 
-        public EventoController(DataContext context)
+        public HinosController(DataContext context)
         {
             _context = context;
 
         }
 
         [HttpGet]
-        public IEnumerable<Evento> Get()
+        public IEnumerable<Hino> Get()
         {
-            return _context.Eventos;
+            return _context.Hinos;
         }
 
         [HttpGet("{id}")]
-        public Evento GetById(int id)
+        public Hino GetById(int id)
         {
-            return _context.Eventos.FirstOrDefault(evento => evento.Id == id);
+            return _context.Hinos.FirstOrDefault(Hino => Hino.Id == id);
         }
 
         [HttpPost]
