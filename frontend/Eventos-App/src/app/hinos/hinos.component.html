@@ -1,1 +1,32 @@
-<p>hinos works!</p>
+<h2>Hinos</h2>
+<hr>
+
+<form action="" class="form-inline">
+    <div class="form-group mb-2">
+        <input 
+        type="text" class="form-control mr-2" placeholder="Digite aqui...">
+        <button class="btn btn-primary">Buscar</button>
+    </div>
+</form>
+
+<table class="table table stripped">
+    <thead class="thead-dark">
+        <tr>            
+            <th>Hino</th>
+            <th>Titulo</th>
+            <th>Parte</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="hinos && hinos.length">
+        <tr *ngFor="let hino of hinos">            
+            <td>{{hino.numero}}</td>
+            <td>{{hino.titulo}}</td>
+            <td>{{hino.letra.substring(0, 120)}}...</td>            
+        </tr>
+    </tbody>
+    <tfoot *ngIf="!hinos.length">
+        <tr>
+            <td colspan="3" class="text-center">Nenhum registro encontrado!</td>
+        </tr>
+    </tfoot>
+</table>

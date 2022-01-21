@@ -7,18 +7,27 @@ import { HinosComponent } from './hinos/hinos.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { PalestrantesComponent } from './palestrantes/palestrantes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavComponent } from './nav/nav.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     HinosComponent,
     EventosComponent,
-    PalestrantesComponent
-  ],
+    PalestrantesComponent,
+    NavComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CollapseModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
